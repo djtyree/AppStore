@@ -1,6 +1,9 @@
 <%= render 'layouts/sidebar' %>
 <div class="main-content span9">
   <div class="main-container">
-    <h1>Home Page</h1>
+    <h3>User List</h3>
+    <% @users.each do |user| %>
+      <%= link_to user.fullname, user %>
+    <% end %>
   </div>
 </div>

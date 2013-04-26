@@ -1,14 +1,6 @@
 @import "bootstrap";
-
-/* mixins, variables, etc. */
-
-$grayMediumLight: #eaeaea;
-
-@mixin box_sizing {
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-}
+@import "colors";
+@import "mixins";
 
 /* miscellaneous */
 
@@ -83,6 +75,7 @@ p {
   margin-left: 0px;
   margin-right: 10px;
   .main-container {
+    @include box_shadow;
     background: white;
     padding: 10px;
     margin-left: 5px;
@@ -94,6 +87,7 @@ p {
   background: #fff linear-gradient(90deg, transparent 79px, #abced4 79px, #abced4 81px, transparent 81px), linear-gradient(#eeeeee 0.1em, transparent 0.1em);
   margin-left: 10px;
   .sidebar-container {
+    @include box_shadow;
     background: white;
     padding: 10px;
     margin-right: 5px;

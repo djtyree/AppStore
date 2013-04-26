@@ -1,11 +1,27 @@
 <header>
-	<div class="header-inner">
-		<%= link_to image_tag("logo.jpg", alt: "App Store"), root_path, id: "logo" %>
-		<div class="account-div">
-			Account Info
-		</div>
-	</div>
+  <div class="header-inner">
+    <%= link_to image_tag("logo.jpg", alt: "App Store"), root_path, id: "logo" %>
+    <div class="account-div">
+      <% if user_signed_in? %>
+        <li id="fat-menu" class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+            Account <b class="caret"></b>
+          </a>
+          <ul class="dropdown-menu">
+            <li> <%= link_to "Profile", current_user, :class => "account-link"  %> </li>
+            <li class="divider"></li>
+            <li>
+            <li>  <%= link_to "Sign Out", destroy_user_session_path, method: "delete", :class => "logout" %> </li>
+            </li>
+          </ul>
+        </li>
+      <% else %>
+        <%= link_to "Sign In", new_user_session_path %>
+      <% end %>
+    </div>
+  </div>
 </header>
+
 <div class="navbar">
 	<div class="navbar-inner">
 		<div class="container">
@@ -14,7 +30,7 @@
 					<%= nav_link "Home", root_path %>
 				</ul>
 				<ul class="nav pull-left">
-					<%= nav_link "Test Link", "www.drupal.org" %>
+					<%= nav_link "Test Link", "http://www.drupal.org" %>
 				</ul>
 			</nav>
 		</div>

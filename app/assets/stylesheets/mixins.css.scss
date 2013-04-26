@@ -1,0 +1,34 @@
+@mixin box_sizing {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+@mixin button-shadow($pressed) {
+  $y-axis: 1px;
+  $text-y-axis: 1px;
+  @if $pressed {
+    border-top: solid 1px #aaa;
+    $y-axis: -2px;
+    $text-y-axis: -1px;
+  } @else {
+    border-bottom: solid 1px #aaa;
+  }
+  color: #444;
+  border-top: solid 1px #aaa;
+  -webkit-box-shadow: 0 $y-axis 1px rgba(0, 0, 0, .2);
+  -moz-box-shadow: 0 $y-axis 1px rgba(0, 0, 0, .2);
+  box-shadow: 0 $y-axis 1px rgba(0, 0, 0, .2);
+  text-shadow: 0px $text-y-axis 0 rgba(255, 255, 255, .8);
+}
+
+@mixin box_shadow {
+  $y-axis: 1px;
+  $x-axis: 1px;
+  $blur: 1px;
+
+  -webkit-box-shadow: $x-axis $y-axis $blur rgba(0, 0, 0, .2);
+  -moz-box-shadow: $x-axis $y-axis $blur rgba(0, 0, 0, .2);
+  box-shadow: $x-axis $y-axis $blur rgba(0, 0, 0, .2);
+}
+

@@ -1,25 +1,5 @@
-/* mix-ins & variables */
-
-$navGray: #e7e5e5;
-$headerColor: #afd;
-
-@mixin button-shadow($pressed) {
-  $y-axis: 1px;
-  $text-y-axis: 1px;
-  @if $pressed {
-    border-top: solid 1px #aaa;
-    $y-axis: -2px;
-    $text-y-axis: -1px;
-  } @else {
-    border-bottom: solid 1px #aaa;
-  }
-  color: #444;
-  border-top: solid 1px #aaa;
-  -webkit-box-shadow: 0 $y-axis 1px rgba(0, 0, 0, .2);
-  -moz-box-shadow: 0 $y-axis 1px rgba(0, 0, 0, .2);
-  box-shadow: 0 $y-axis 1px rgba(0, 0, 0, .2);
-  text-shadow: 0px $text-y-axis 0 rgba(255, 255, 255, .8);
-}
+@import "colors";
+@import "mixins";
 
 /* header */
 header {
@@ -42,9 +22,41 @@ header {
     .account-div {
       float: right;
       margin: 20px;
-      width: 150px;
+      width: 100px;
       background: white;
       padding: 10px;
+
+      -webkit-border-radius: 1em;
+      -moz-border-radius: 1em;
+
+      -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, .4);
+      -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, .4);
+
+      background: white; /* for non-css3 browsers */
+      filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff', endColorstr='#ccc'); /* for IE */
+      background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#ccc)); /* for webkit browsers */
+      background: -moz-linear-gradient(top,  #fff,  #ccc); /* for firefox 3.6+ */
+      border: solid 1px #6d6d6d;
+
+      li {
+        text-align: center;
+        list-style: none;
+        a {
+          text-decoration: none;
+          text-shadow: 0 1px 1px rgba(0, 0, 0, .3);
+          font-weight: bold;
+          color: darkslategray;
+
+        }
+        a.account-link {
+          color: blue;
+          text-shadow: none;
+        }
+        .dropdown-menu {
+          top: 150%;
+          left: -25%
+        }
+      }
     }
 
   }
@@ -87,7 +99,7 @@ header {
 
     border: solid 1px #6d6d6d;
 
-    li {
+    nav li {
       margin: 0 5px;
       padding: 0 0 8px;
       float: left;
@@ -96,14 +108,14 @@ header {
 
       a {
         font-weight: bold;
-        color: $navGray;
+        color: white;
         text-decoration: none;
         display: block;
         padding:  8px 20px;
         margin: 0;
         -webkit-border-radius: 1.6em;
         -moz-border-radius: 1.6em;
-        text-shadow: 0 1px 1px rgba(0, 0, 0, .3);
+        text-shadow: 0 1px 1px darkslategray;
       }
     }
     .current a,

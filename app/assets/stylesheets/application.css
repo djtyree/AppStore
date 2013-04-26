@@ -9,8 +9,10 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
+ *= require header
  *= require footer
  *= require overall
- *= require header
- *= require_tree .
+ *
+ * Commented line below out
+ * require_tree .
  */
