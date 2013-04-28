@@ -8,5 +8,11 @@
     </section>
   </aside>
   <div class="span8">
+    <div class="main-container">
+      <h3>App List</h3>
+      <% @user.apps.each do |app| %>
+        <%= link_to app.title, app %>
+      <% end %>
+    </div>
   </div>
 </div>
