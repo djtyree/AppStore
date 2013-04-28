@@ -7,6 +7,7 @@ AppStore::Application.routes.draw do
   end
 
   resources :users, :only => [:show]
+  resources :apps, :only => [:new, :show, :create, :destroy, :index]
 
   root to: 'static_pages#home'
  

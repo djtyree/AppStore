@@ -1,0 +1,16 @@
+<% provide(:title, @app.title) %>
+<div class="row">
+  <aside class="span4">
+    <section>
+      <h1>
+        <%= @app.title %>        
+      </h1>
+      <h3>
+        <%= link_to @user.fullname, @user %>
+      </h3>
+    </section>
+  </aside>
+  <div class="span8">
+      <%= @app.description %>
+  </div>
+</div>
