@@ -13,22 +13,46 @@ footer {
   margin-top: 45px;
   padding-top: 5px;
   border-top: 1px solid $grayMediumLight;
-  color: $grayLight;
-  a {
-    color: $gray;
-    &:hover { 
-      color: $grayDarker;
+  color: $white;
+    
+  height: 45px;
+    
+  border-bottom-right-radius: 2em;
+  -webkit-border-bottom-right-radius: 2em;
+  -moz-border-bottom-right-radius: 2em;
+  border-bottom-left-radius: 2em;
+  -webkit-border-bottom-left-radius: 2em;
+  -moz-border-bottom-left-radius: 2em;
+  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, .4);
+  -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, .4);
+
+  background: #8b8b8b; /* for non-css3 browsers */
+  filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#a9a9a9', endColorstr='#7a7a7a'); /* for IE */
+  background: -webkit-gradient(linear, left top, left bottom, from(#a9a9a9), to(#7a7a7a)); /* for webkit browsers */
+  background: -moz-linear-gradient(top,  #a9a9a9,  #7a7a7a); /* for firefox 3.6+ */
+
+  border: solid 1px #6d6d6d;
+  
+  .footer-container {
+    padding: 10px 35px;
+    a {
+      color: white;
+      font-weight: bold;
+      text-decoration: underline;
+      &:hover {    
+        
+      }
+    }  
+    small { 
+      float: left; 
     }
-  }  
-  small { 
-    float: left; 
-  }
-  ul {
-    float: right;
-    list-style: none;
-    li {
-      float: left;
-      margin-left: 10px;
+    ul {
+      float: right;
+      list-style: none;
+      li {
+        float: left;
+        margin-left: 10px;
+      }
     }
   }
 }
